@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<conio.h>
 
-int CALCULATE(int f,int s){
+void CALCULATE(int f,int s){
     int result=f+s;
     printf("%d",result);
 }
 int CALCULATE_(int f,int s){
     int result=f+s;
-    return f+s;
+    return result;
 }
 int CALCULATE__(){
     int f=5, s=8;  
     int result=f+s;
     return result;
 }
-int CALCULATE___(){
+void CALCULATE___(){
     int f=5, s=8;  
     int result=f+s;
     printf("%d",result);
