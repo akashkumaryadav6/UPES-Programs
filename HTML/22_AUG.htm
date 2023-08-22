@@ -1,21 +1,14 @@
 <html>
     <head>
-        <title>18_AUGUST</title>
+        <title>22_AUGUST</title>
         <script>
-            function F(){
-                document.write("<h3>Welcome</h3><br>")
-                var r=5
-                var t=9
-                var c=r*t
-                document.write(c+"<br>")
-            }
             function ADD(){
                 p=document.getElementById("t1").value;
                 y=document.getElementById("t2").value;
                 j=parseInt(p);
                 k=parseInt(y);
                 r=j+k;
-                alert(r);
+                document.getElementById("p2").innerHTML=r;
             }
             function SUB(){
                 p=document.getElementById("t1").value;
@@ -23,8 +16,10 @@
                 j=parseInt(p);
                 k=parseInt(y);
                 r=j-k;
-                alert(r);
+                document.getElementById("p2").innerHTML=r
             }
+            var dt=document.getElementById("p3").innerHTML="WELCOME"
+            document.write(dt)
         </script>
     </head>
     <body>
@@ -36,11 +31,7 @@
         <input type="button" onclick=SUB() value="SUBTRACT">
         <input type="reset" value="CLEAR">
         <br></form>
-        <input type="button" onclick=F() value="Click" target="_blank">
-        <br>
-        <button onclick="document.getElementById('img').src='on.jpg'">TURN ON</button>
-        <img id="img" src="off.jpg" style="width: 100px; height:100px">
-        <button onclick="document.getElementById('img').src='off.jpg'">TURN OFF</button>
-
+        <p id="p2"></p>
+        <p id="p3">Hello!</p>
     </body>
 </html>
