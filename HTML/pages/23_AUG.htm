@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_AUG</title>
+    <script>
+        function Name() {
+            var nameOfPerson = document.getElementById("p2").value;
+            document.write("Welcome " + nameOfPerson + "!");
+        }
+        function changeBackground() {
+            var clr = document.getElementById('colorList').value;
+            document.body.style.background = clr;
+        }
+    </script>
+</head>
+
+<body>
+    <div align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </div>
+    <p><input type="text" id="p2" placeholder="Enter your name"></p>
+    <p><input type="button" onclick=Name() value="Click"></p>
+    <select id="colorList" onchange=changeBackground()>
+        <option>PINK</option>
+        <option>BLUE</option>
+        <option>VIOLET</option>
+        <option>PURPLE</option>
+        <option>LAVENDER</option>
+    </select>
+
+    <textarea rows="3" cols="30" name="t" onmouseover="this.value='Here!', this.style.color='red'"
+        onmouseout="this.value='Not here!'"></textarea>>
+</body>
+
+</html>

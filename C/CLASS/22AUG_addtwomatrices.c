@@ -23,7 +23,7 @@ int main(){
         printf("\n");
     }
 
-    /*//printing MATRIX 2
+    //printing MATRIX 2
     printf("Enter the number of rows (m): ");
     scanf("%d",&o);
     printf("Enter the number of rows (n): ");
@@ -58,7 +58,7 @@ int main(){
     }
     else{
         printf("The order of matrices is not suitable.");
-    }*/
+    }
    
     return 0;
 }

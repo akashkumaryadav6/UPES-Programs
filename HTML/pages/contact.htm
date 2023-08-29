@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <p align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </p>
+    <form>
+        <fieldset>
+            <legend>
+                <h2>Contact Us</h2>
+            </legend>
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" required placeholder="Enter your name" name="username" id="name">
+            </div><br>
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" required placeholder="Enter your Email" name="useremail" id="email">
+            </div><br>
+
+            <div>Message:
+                <textarea required name="usermessage" id="message" cols="17" rows="5"></textarea>
+            </div><br>
+
+            <div>Number:
+                <input required name="usernumber" id="number" type="number">
+            </div><br>
+
+            <div>Gender:
+                <select required name="usergender" id="gender" size="1">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="space" selected> </option>
+                </select>
+            </div><br>
+            <input type="submit" value="Submit">
+            <br>
+        </fieldset>
+    </form>
+</body>
+
+</html>

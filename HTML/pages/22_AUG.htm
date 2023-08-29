@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_AUGUST</title>
+    <script>
+        function ADD() {
+            p = document.getElementById("t1").value;
+            y = document.getElementById("t2").value;
+            j = parseInt(p);
+            k = parseInt(y);
+            r = j + k;
+            document.getElementById("p2").innerHTML = r;
+        }
+        function SUB() {
+            p = document.getElementById("t1").value;
+            y = document.getElementById("t2").value;
+            j = parseInt(p);
+            k = parseInt(y);
+            r = j - k;
+            document.getElementById("p2").innerHTML = r
+        }
+        var dt = document.getElementById("p3").innerHTML = "WELCOME"
+        document.write(dt)
+    </script>
+</head>
+
+<body>
+    <div align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </div>
+    Click to see
+    <br>
+    <form>
+        <input type="text" id="t1" placeholder="Enter your number">
+        <input type="text" id="t2" placeholder="Enter your number">
+        <input type="button" onclick=ADD() value="ADD">
+        <input type="button" onclick=SUB() value="SUBTRACT">
+        <input type="reset" value="CLEAR">
+        <br>
+    </form>
+    <p id="p2"></p>
+    <p id="p3">Hello!</p>
+</body>
+
+</html>
