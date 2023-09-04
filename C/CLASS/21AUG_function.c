@@ -23,10 +23,8 @@ void CALCULATE___(){
 int main(){
     printf("\nResult: ");
     CALCULATE(45,5);
-    printf("\nResult: ");
-    CALCULATE_(45,5);
-    printf("\nResult: ");
-    CALCULATE__();
+    printf("\nResult: ",CALCULATE_(45,5));
+    printf("\nResult: ",CALCULATE__());
     printf("\nResult: ");
     CALCULATE___();
     return 0;
