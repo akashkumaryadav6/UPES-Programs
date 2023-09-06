@@ -17,14 +17,6 @@ int main(){
             scanf("%d",&arr[i][j]);
         }
     }
-    // printf("\n");
-    // for (int i=0; i<m; i++){
-    //     for (int j=0; j<n; j++){
-    //         printf("%d ",arr[i][j]);
-    //     }
-    //     printf("\n");
-    // }
-
     //inputing MATRIX 2
     printf("\nEnter the number of rows (m): ");
     scanf("%d",&o);
@@ -37,13 +29,6 @@ int main(){
             scanf("%d",&arr2[i][j]);
         }
     }
-    // printf("\n");
-    // for (int i=0; i<o; i++){
-    //     for (int j=0; j<p; j++){
-    //         printf("%d ",arr[i][j]);
-    //     }
-    //     printf("\n");56rrttttttttttttttt
-    // }
    //printing resultant array
    if (n==o){
         for (int i=0; i<m; i++){
