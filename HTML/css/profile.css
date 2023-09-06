@@ -49,3 +49,8 @@ span{
 button:hover, a:hover {
     opacity: 0.7;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+}
