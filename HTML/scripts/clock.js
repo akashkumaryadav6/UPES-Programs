@@ -2,13 +2,13 @@ let startBtn = document.getElementById('start');
 let stopBtn = document.getElementById('stop');
 let resetBtn = document.getElementById('reset');
 
-let hour = 00;
-let minute = 00;
-let second = 00;
+let hour = 11;
+let minute = 59;
+let second = 59;
 let count = 00;
 
 startBtn.addEventListener('click', function () {
-	timer = true;
+	timer = true
 	stopWatch();
 });
 
@@ -18,14 +18,15 @@ stopBtn.addEventListener('click', function () {
 
 resetBtn.addEventListener('click', function () {
 	timer = false;
-	hour = 0;
-	minute = 0;
-	second = 0;
+	hour = 11;
+	minute = 59;
+	second = 59;
 	count = 0;
-	document.getElementById('hr').innerHTML = "00";
-	document.getElementById('min').innerHTML = "00";
-	document.getElementById('sec').innerHTML = "00";
+	document.getElementById('hr').innerHTML = "11";
+	document.getElementById('min').innerHTML = "59";
+	document.getElementById('sec').innerHTML = "59";
 	document.getElementById('count').innerHTML = "00";
+	document.getElementById('time').innerHTML = "PM";
 });
 
 function stopWatch() {
@@ -46,15 +47,30 @@ function stopWatch() {
 			hour++;
 			minute = 0;
 			second = 0;
-		}
-
+	    }
+		
 		let hrString = hour;
 		let minString = minute;
 		let secString = second;
 		let countString = count;
 
-		if (hour < 10) {
+		if (hour>=12){
+			document.getElementById('time').innerHTML = "PM";
+				if (hour > 12){
+					hrString = hour - 12;
+					document.getElementById('time').innerHTML = "PM";
+				}
+		}
+		else{
+			document.getElementById('time').innerHTML = "AM";
+		}
+
+		if (hrString < 10){
 			hrString = "0" + hrString;
+		}
+
+		if (hour < 10) {
+			hrString = "0" + hour;
 		}
 
 		if (minute < 10) {

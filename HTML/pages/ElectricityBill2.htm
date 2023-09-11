@@ -8,7 +8,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0"><html>
     <head>
-        <title>LAB ACTIVITY 2</title>
+        <title>Electricity Bill Version 2</title>
         <style>
             .center{
                 text-align: center;
@@ -18,30 +18,44 @@
             function BILL(){
                 var U=document.getElementById('units').value;
                 var RES
-                if (0<U<=50){
-                    RES=U*3.50
+                if (0<U<=150){
+                    RES=U*4.50
+                    if (RES>200){
+                        document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
+                    }
+                    else{
+                        RES=200;
+                        document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
+                    }                    
+                }
+                else if (200>=U>150){
+                    first150=150*4.50
+                    next50=(U-50)*5
+                    RES=first150+next50
                     document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
                 }
-                else if (50<U<=150){
-                    first50=50*3.50
-                    next100=(U-50)*4
-                    RES=first50+next100
+                else if (200<U<=250){
+                    first150=150*4.50
+                    next50=50*5
+                    nextnext50=(U-200)*5
+                    RES=first150+next50+nextnext50
                     document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
                 }
-                else if (150<U<=250){
-                    first50=50*3.50
-                    next100=100*4
-                    nextnext100=(U-150)*5.20
-                    RES=first50+next100+nextnext100
+                else if (300>=U>250){
+                    first150=150*4.50
+                    next50=50*5
+                    nextnext50=50*5.50
+                    nextnextnext50=(U-250)*6.5
+                    RES=first150+next50+nextnext50+nextnextnext50
                     document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
                 }
-                else if (U>250){
-                    first50=50*3.50
-                    next100=100*4
-                    nextnext100=150*5.20
-                    unit200=(U-250)*6.50
-                    RES=first50+next100+nextnext100+unit200
-                    document.getElementById("res").innerHTML="Total bill is: Rs. "+RES;
+                else{
+                    first150=150*4.50
+                    next50=50*5
+                    nextnext50=50*5.50
+                    nextnextnext50=50*6.5
+                    next300=(U-300)*6.5
+                    RES=first150+next50+nextnext50+nextnextnext50+next300
                 }
                 confirm("Total payable amount is Rs. "+RES);
             }
@@ -73,7 +87,7 @@
                                 <label for="mobnumber">Mobile Number:</label>
                             </td>
                             <td>
-                                <input type="number" required placeholder="Mobile Number" name="contact" id="mobnumber" required>
+                                <input type="tel" required placeholder="Mobile Number" name="contact" onKeyPress="if(this.value.length==10) return false;" id="mobnumber" required>
                             </td>
                         </tr>
                         <tr>
