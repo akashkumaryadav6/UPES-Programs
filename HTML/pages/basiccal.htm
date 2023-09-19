@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        td{text-align: center;}
+        input{text-align: center; max-height: 40%;max-width: 100%;border: none;background-color: black;color: white;}
+        button{ cursor: pointer; border: none;color: white;background-color: gray;max-width: 25px;max-height: 25px;box-shadow: 1px 1px 8px 2px honeydew;}
+        .btn_gray{color: black;background-color: gainsboro;box-shadow: 1px 1px 8px 2px gray;}
+        .btn_yellow{color: white;background-color: orange;box-shadow: 1px 1px 8px 2px yellow;}
+        div{display:block;background-color: black;max-width: 20%;}
+    </style>
+</head>
+
+<body>
+    <p align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">R</button></a>
+    </p>
+    <br><center>
+        <div><center>
+            <table>
+                <tr>
+                    <td colspan=4 rowspan=3><input type="text" id="num"></td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td><button id="clear" class="btn_gray">AC</button></td>
+                    <td><button id="neg" class="btn_gray">+/-</button></td>
+                    <td><button id="percent" class="btn_gray">%</button></td>
+                    <td><button id="div" class="btn_yellow">/</button></td>
+                </tr>
+                <tr>
+                    <td><button id="7">7</button></td>
+                    <td><button id="8">8</button></td>
+                    <td><button id="9">9</button></td>
+                    <td><button id="mul" class="btn_yellow">*</button></td>
+                </tr>
+                <tr>
+                    <td><button id="4">4</button></td>
+                    <td><button id="5">5</button></td>
+                    <td><button id="6">6</button></td>
+                    <td><button id="sub" class="btn_yellow">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="1">1</button></td>
+                    <td><button id="2">2</button></td>
+                    <td><button id="3">3</button></td>
+                    <td><button id="add" class="btn_yellow">+</button></td>
+                </tr>
+                <tr>
+                    <td><button id="0">0</button></td>
+                    <td><button id="00">00</button></td>
+                    <td><button id="decimal">.</button></td>
+                    <td><button id="equal" class="btn_yellow">=</button></td>
+                </tr>
+            </table><br>
+        </center>
+    </div></center>
+    <script>
+        var n1, n2, f1, f2, result, choice;
+        let btn1 = document.getElementById('1');
+        let btn2 = document.getElementById('2');
+        let btn3 = document.getElementById('3');
+        let btn4 = document.getElementById('4');
+        let btn5 = document.getElementById('5');
+        let btn6 = document.getElementById('6');
+        let btn7 = document.getElementById('7');
+        let btn8 = document.getElementById('8');
+        let btn9 = document.getElementById('9');
+        let btn0 = document.getElementById('0');
+        let btn00 = document.getElementById('00');
+        let btnclear = document.getElementById('clear');
+        let btnneg = document.getElementById('neg');
+        let btnpercent = document.getElementById('percent'); 
+        let btndiv = document.getElementById('div');
+        let btnmul = document.getElementById('mul');
+        let btnadd = document.getElementById('add');
+        let btnsub = document.getElementById('sub');
+        let btnequal = document.getElementById('equal');
+        let btndeci = document.getElementById('decimal');
+        
+        btn1.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "1";
+        });
+        btn2.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "2";
+        });
+        btn3.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "3";
+        });
+        btn4.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "4";
+        });
+        btn5.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "5";
+        });
+        btn6.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "6";
+        });
+        btn7.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "7";
+        });
+        btn8.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "8";
+        });
+        btn9.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "9";
+        });
+        btn0.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "0";
+        });
+        btn00.addEventListener('click', function () {
+            document.getElementById("num").value = document.getElementById("num").value + "00";
+        });
+
+        btnadd.addEventListener('click', function() {
+            n1 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = " ";
+            choice = 1
+        })
+        btnsub.addEventListener('click', function() {
+            n1 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = " ";
+            choice = 2
+        })
+        btnmul.addEventListener('click', function() {
+            n1 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = " ";
+            choice = 3
+        })
+        btndiv.addEventListener('click', function() {
+            n1 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = " ";
+            choice = 4
+        })
+        btnneg.addEventListener('click', function() {
+            n1 = 0 - parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = n1;
+        })
+        btnpercent.addEventListener('click', function() {
+            n1 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = n1/100;
+        })
+        btndeci.addEventListener('click', function() {
+            document.getElementById("num").value = document.getElementById("num").value+".";
+            f1 = parseFloat(document.getElementById("num").value);
+            choice = 5
+        })
+
+        btnequal.addEventListener('click', function() {
+            n2 = parseInt(document.getElementById("num").value);
+            document.getElementById("num").value = " ";
+            if (choice == 1) {
+                result = n1 + n2;
+            }
+            else if (choice == 2) {
+                result = n1 - n2;
+            }
+            else if (choice == 3) {
+                result = n1 * n2;
+            }
+            else if (choice == 5) {
+                alert(f1,f2)
+                if (choice == 1){
+                    result = f1 + f2;
+                    alert(choice,f1,f2)
+                }
+                else if (choice == 2){
+                    result = f1 - f2;
+                    alert(choice,f1,f2)
+                }
+                else if (choice == 3){
+                    result = f1 * f2;
+                    alert(choice,f1,f2)
+                }
+                else {
+                    result = f1 / f2;
+                    alert(choice,f1,f2)
+                }
+            }
+            else {
+                result = n1 / n2;
+            }
+            document.getElementById("num").value = result;
+        })
+        btnclear.addEventListener('click', function() {
+            document.getElementById("num").value = "";
+        })
+    </script>
+</body>
+</html>
