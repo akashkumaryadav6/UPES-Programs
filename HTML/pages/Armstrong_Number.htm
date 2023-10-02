@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Armstrong Number</title>
+        <script>
+            function ArmstrongNumber() {
+                var N = 100;
+                var rem;
+                var s = 0;
+                
+        
+                if (N<=999){
+                    var m = N;
+                    rem = m % 10;
+                    s = s + rem*rem*rem;
+                    m = m // 10;
+                }
+                if (s == N){
+                    console.log(N);
+                }
+                N = N + 1;
+            }
+            ArmstrongNumber()
+        </script>
+    </head>
+</html>

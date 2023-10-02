@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 int main(){
-    system.cls();
+    system("cls");
 
     struct NODE{
         int data;
@@ -20,25 +20,10 @@ int main(){
 
     printf("Head Node created!\nhead->data:%d\nhead->prev:%d\nhead->next:%d",head->data,head->prev,head->next);
 
+    printf("\n1. Insert At Head\n 2. Insert At End\n 3. Insert At Location");
+
     printf("\nEnter the no. of nodes you want add: ");
     scanf("%d",&nodes);
-
-    for (int i = 0; i<nodes; i++){
-        struct NODE* new_node = (struct NODE*)malloc(sizeof(size));
-        new_node->data = 56+i;
-        new_node->prev = tail;
-        new_node->next = NULL;
-        tail->next = new_node;
-        tail = tail->next;
-    }
-
-    tail = head;
-    for (int i = 0; i<nodes; i++){
-        printf("\nNode %d prev: %d", i+1, &(temp->prev));
-        printf("\nNode %d data: %d", i+1, &(temp->data));
-        printf("\nNode %d next: %d", i+1, &(temp->next));
-        printf("\n");
-    }
 
     return 0;
 }
