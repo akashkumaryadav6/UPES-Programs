@@ -20,10 +20,10 @@ void isPrimeNumber(int x){
                 continue;
             }
         }
-    if (factors==2){
-        printf("\nIt is a Prime number!");
+    if (factors<2){
+        printf("It is a Prime number!");
     }
     else{
-        printf("\nIt is not a Prime number!");
+        printf("It is not a Prime number!");
     }
 }

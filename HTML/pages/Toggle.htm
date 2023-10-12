@@ -1,22 +1,33 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Toggle</title>
-        <script>
-            var tt = document.getElementById("ttbtn");
-            tt.addEventListener('click', function{
-                var str = document.getElementById("tt").value;
-                for (var i = 0; i<str.length; i++){
-                    if Character.isUpperC
+
+<head>
+    <title>Toggle Case</title>
+    <script>
+        function swapCase(inputString) {
+            let swappedString = '';
+
+            for (let i = 0; i < inputString.length; i++) {
+                const char = inputString.charAt(i);
+
+                if (char === char.toLowerCase()) {
+                    swappedString += char.toUpperCase();
+                } else {
+                    swappedString += char.toLowerCase();
                 }
-            })
-        </script>
-    </head>
-    <body>
-        <div>
-            <center>
-                <input type="text" id="tt">
-                <button id="ttbtn">Check</button>
-            </center>
-        </div>
-    </body>
+            }
+            return swappedString;
+        }
+
+        const input = 'The Quick Brown Fox';
+        const swappedResult = swapCase(input);
+        console.log(swappedResult);
+
+    </script>
+</head>
+<body>
+    <div style="border: none;" class="container2">
+		<a href="../index.htm"><button style="border: none;" onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+	</div>
+</body>
 </html>

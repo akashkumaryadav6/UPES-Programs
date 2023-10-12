@@ -7,32 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrays</title>
     <script>
-        // var tvalue = [["Enroll. No.", "M1","M2","M3","Average"],
-        //             ["E01", 80, 70, 60, 0],
-        //             ["E02", 50, 60, 80, 0],
-        //             ["E03", 80, 70, 90, 0],
-        //             ["E04", 50, 100, 70, 0]]
-        // for (let i = 1; i<tvalue.length; i++){
-        //     tvalue[i][4] = parseInt((tvalue[i][1]+tvalue[i][2]+tvalue[i][3])/3);
-        // }
-        // console.table(tvalue)
-        // var matrix1 = [[1, 2, 3],
-        //                [4, 5, 6],
-        //                [7, 8, 9],
-        //             ]
-        // console.table(matrix1)
-        // var matrix2 = [[9, 8, 7],
-        //                [6, 5, 4],
-        //                [3, 2, 1],
-        //             ]
-        // console.table(matrix2)
-        // var matrix3 = [[],[],[]]
-        // for (let i = 0; i <= 2; i++) {
-        //     for (let j = 0; j <= 2; j++) {
-        //         matrix3[i][j] = matrix1[i][j] + matrix2[i][j];
-        //     }
-        // }
-        // console.table(matrix3)
+        var tvalue = [["Enroll. No.", "M1","M2","M3","Average"],
+                    ["E01", 80, 70, 60, 0],
+                    ["E02", 50, 60, 80, 0],
+                    ["E03", 80, 70, 90, 0],
+                    ["E04", 50, 100, 70, 0]]
+        for (let i = 1; i<tvalue.length; i++){
+            tvalue[i][4] = parseInt((tvalue[i][1]+tvalue[i][2]+tvalue[i][3])/3);
+        }
+        console.table(tvalue)
+        var matrix1 = [[1, 2, 3],
+                       [4, 5, 6],
+                       [7, 8, 9],
+                    ]
+        console.table(matrix1)
+        var matrix2 = [[9, 8, 7],
+                       [6, 5, 4],
+                       [3, 2, 1],
+                    ]
+        console.table(matrix2)
+        var matrix3 = [[],[],[]]
+        for (let i = 0; i <= 2; i++) {
+            for (let j = 0; j <= 2; j++) {
+                matrix3[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+        console.table(matrix3)
         let array1 = new Array ("One", "Two", "Three", "Four", "Five")
         array1.push("Six")
         console.log(array1)
@@ -48,47 +48,9 @@
 </head>
 
 <body>
-    <!--<center>
-        <span>
-            <table>
-                <tr>
-                    <th>Enrol No.</th>
-                    <th>M1</th>
-                    <th>M2</th>
-                    <th>M3</th>
-                    <th>Average</th>
-                </tr>
-                <tr>
-                    <td>E01</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>60</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>E02</td>
-                    <td>50</td>
-                    <td>60</td>
-                    <td>80</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>E03</td>
-                    <td>80</td>
-                    <td>70</td>
-                    <td>90</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>E04</td>
-                    <td>50</td>
-                    <td>100</td>
-                   <td>70</td>
-                    <td>0</td>
-                </tr>
-            </table>
-        </span>
-    </center> -->
+    <div align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </div>
 </body>
 
 </html>

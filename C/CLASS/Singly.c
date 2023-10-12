@@ -25,9 +25,10 @@ label:
   printf("\n3. INSERT AT LOCATION");
   printf("\n4. DELETE FROM HEAD");
   printf("\n5. DELETE FROM LOCATION");
-  printf("\n6. PRINT LINKED LIST");
-  printf("\n7. COUNT");
-  printf("\n8. EXIT");
+  printf("\n6. DELETE FROM END");
+  printf("\n7. PRINT LINKED LIST");
+  printf("\n8. COUNT");
+  printf("\n9. EXIT");
   printf("\nWhat is your choice? ");
 
   scanf("%d", &choice);
@@ -39,21 +40,13 @@ label:
     printf("\nHow many nodes do you want to add? ");
     scanf("%d", &nodes);
     printf("\n");
-    if (nodes == 0)
+    for (int i = 0; i < nodes; i++)
     {
-      goto label;
-    }
-    else
-    {
-      for (int i = 0; i < nodes; i++)
-      {
-        struct node* new_node = (struct node *)malloc(sizeof(Size));
-        printf("Enter data for node %d: ", i + 1);
-        scanf("%d", &(new_node->data));
-        new_node->next = head;
-        head = new_node;
-        head->next = NULL;
-      }
+      struct node *new_node = (struct node *)malloc(sizeof(Size));
+      printf("Enter data for node %d: ", i + 1);
+      scanf("%d", &(new_node->data));
+      new_node->next = head;
+      head = new_node;
     }
     break;
 
@@ -107,11 +100,12 @@ label:
       {
         temp = temp->next;
       }
-      for (int i = 0; i < nodes; i++){
+      for (int i = 0; i < nodes; i++)
+      {
         struct node *new_node = (struct node *)malloc(sizeof(Size));
         printf("Enter data for node %d: ", i + 1);
         scanf("%d", &(new_node->data));
-        new_node = temp->next; 
+        new_node = temp->next;
         temp->next = new_node;
       }
     }
@@ -124,6 +118,20 @@ label:
     head = head->next;
     printf("\n\nDeleted %d from Head", temp->data);
     free(temp);
+    break;
+
+  case 6:
+    system("cls");
+    printf("\nYou chose 'DELETE FROM END!'");
+    temp = head;
+    struct node *del = (struct node *)malloc(sizeof(Size));
+    while (temp->next)
+    {
+      del = temp;
+      temp = temp->next;
+    }
+    del->next = NULL;
+    free(del);
     break;
 
   case 5:
@@ -153,7 +161,7 @@ label:
     }
     break;
 
-  case 6:
+  case 7:
     system("cls");
     printf("\nYou chose 'PRINT LINKED LIST!'\n");
     temp = head;
@@ -166,7 +174,7 @@ label:
     }
     break;
 
-  case 7:
+  case 8:
     system("cls");
     printf("\nYou chose 'COUNT NODES!'");
     temp = head;
@@ -179,7 +187,7 @@ label:
     printf("\nTotal no of nodes: %d", count);
     break;
 
-  case 8:
+  case 9:
     system("cls");
     printf("\nYou chose 'EXIT'");
     exit(0);
@@ -190,23 +198,4 @@ label:
     printf("\nNo such operation allowed");
   }
   goto label;
-
-  // printf("\n\nDELETING FROM THE END");
-  // temp = head;
-  // while (temp->next->next != NULL)
-  // {
-  //   a = temp->next;
-  //   temp->next = NULL;
-  //   free(a);
-  // }
-
-  // count = 0;
-  // temp = head;
-  // while (temp != NULL)
-  // {
-  //   count++;
-  //   printf("\nThe data at node %d is: %d", count, temp->data);
-  //   temp = temp->next;
-  // }
-  // printf("\nTotal no of nodes: %d", count);
 }

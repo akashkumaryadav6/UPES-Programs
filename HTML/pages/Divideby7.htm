@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Divisibility by 7</title>
+    <script>
+        function DivisibleBy7(start, end) {
+            const result = [];
+
+            for (let i = start; i <= end; i++) {
+                if (i % 2 === 0 && i % 7 === 0) {
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+        const start = 1;
+        const end = 100;
+
+        const evenNumbersDivisibleBy7 = DivisibleBy7(start, end);
+        console.log("Even natural numbers divisible by 7 in the range:");
+        console.log(evenNumbersDivisibleBy7);
+
+    </script>
+</head>
+
+<body>
+    <div style="border: none;" class="container2">
+		<a href="../index.htm"><button style="border: none;" onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+	</div>
+</body>
+
+</html>

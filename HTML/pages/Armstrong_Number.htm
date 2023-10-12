@@ -1,25 +1,37 @@
 <html>
-    <head>
-        <title>Armstrong Number</title>
-        <script>
-            function ArmstrongNumber() {
-                var N = 100;
-                var rem;
-                var s = 0;
-                
-        
-                if (N<=999){
-                    var m = N;
-                    rem = m % 10;
-                    s = s + rem*rem*rem;
-                    m = m // 10;
-                }
-                if (s == N){
-                    console.log(N);
-                }
-                N = N + 1;
+<head>
+    <title>Armstrong Number</title>
+    <script>
+        function isArmstrongNumber(N) {
+            var M = N;
+            var S = 0;
+
+            while (M > 0) {
+                var REM = M % 10;
+                S += REM*REM*REM;
+                M = Math.floor(M / 10);
             }
-            ArmstrongNumber()
-        </script>
-    </head>
+
+            return S === N;
+        }
+
+        function findArmstrongNumbers() {
+            var lowerLimit = 100;
+            var upperLimit = 999;
+
+            for (var i = lowerLimit; i <= upperLimit; i++) {
+                if (isArmstrongNumber(i)) {
+                    console.log(i);
+                }
+            }
+        }
+
+        findArmstrongNumbers();
+    </script>
+</head>
+<body>
+    <div style="border: none;" class="container2">
+		<a href="../index.htm"><button style="border: none;" onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+	</div>
+</body>
 </html>

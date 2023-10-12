@@ -4,7 +4,7 @@ char isPalindrome(char str[]);
 void main(){
     char word[100];
     printf("What is your word or sentence? ");
-    gets(word);
+    fgets(word, sieof(word), stdin);
     isPalindrome(word);
 }
 
