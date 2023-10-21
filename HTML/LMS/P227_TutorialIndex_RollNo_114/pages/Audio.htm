@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Buttons</title>
+</head>
+
+<body>
+    <br>
+    <div>
+        <center>
+            <button onclick="playSound('cry')">CRY</button>
+            <button onclick="playSound('clap')">CLAP</button>
+            <button onclick="playSound('scream')">SCREAM</button>
+            <button onclick="playSound('laugh')">LAUGH</button>
+        </center>
+    </div>
+
+    <audio id="cryAudio" src="../audios/cry.mp3"></audio>
+    <audio id="laughAudio" src="../audios/laugh.mp3"></audio>
+    <audio id="clapAudio" src="../audios/clap.mp3"></audio>
+    <audio id="screamAudio" src="../audios/scream.mp3"></audio>
+
+    <script>
+        function playSound(soundName) {
+            const cry = document.getElementById("cryAudio");
+            const laugh = document.getElementById("laughAudio");
+            const scream = document.getElementById("screamAudio");
+            const clap = document.getElementById("clapAudio");
+            cry.pause();
+            laugh.pause();
+            clap.pause();
+            scream.pause();
+            if (soundName === "cry") {
+                cry.currentTime = 0;
+                cry.play();
+            } else if (soundName === "laugh") {
+                laugh.currentTime = 0;
+                laugh.play();
+            } else if (soundName === "scream") {
+                scream.currentTime = 0;
+                scream.play();
+            } else if (soundName === "clap") {
+                clap.currentTime = 0;
+                clap.play();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+
+table{margin-top: 2rem; margin-bottom: 2rem;}
+.tright{text-align:right;}
+.card{margin-left: 20rem; margin-right: 20rem; align-items: center;justify-content: center;}
+.img{margin-top: 8px; border:1px solid black; border-right: none; width: 20px; height: 20px;}
+.input{max-width: 15rem; width: 15rem; margin-top: 8px;}
+.btn{width: 5rem; height: 2rem; margin-top: 2rem; padding-top: 2px; padding-left: 2px; padding-right: 2px; padding-bottom: 2px; border: none; text-decoration-color: white; background-color: orange; color: aliceblue;}
+.div{
+    max-width: 30%;
+    max-height: 20%;
+    align-items: center;
+    align-self: center;
+    color:cyan;
+    background-color: orange;
+}

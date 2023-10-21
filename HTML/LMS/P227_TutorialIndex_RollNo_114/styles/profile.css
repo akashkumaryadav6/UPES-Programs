@@ -1,0 +1,56 @@
+.name{
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: bold;
+    margin:auto;
+    text-align: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.desg{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font:bolder;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin:auto;
+    text-align: center;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    color: green;
+    font-size: 22px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 30%;
+    max-height: auto;
+    margin:auto;
+    text-align: center;
+}
+
+button {
+    background-color: cyan;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    font-size: 14px;  
+}
+
+span{
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}

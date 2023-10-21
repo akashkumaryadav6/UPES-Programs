@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Calculator</title>
+    <script>
+        var pay=parseInt(prompt("Enter your Pay: "));
+        var payAfterBonus=parseInt(pay);
+        var bonus;
+        if (pay>3000){
+            bonus=300;
+            payAfterBonus=pay+300;
+        }
+        else if (pay>1600){
+            if (pay>2400){
+                bonus=240;
+                payAfterBonus=pay+bonus;
+            }
+            else{
+                bonus=pay/10;
+                payAfterBonus=pay+bonus;
+            }
+        }
+        else{
+            bonus=(pay*3)/20;
+            {
+                if (bonus>100){
+                    payAfterBonus=pay+bonus;
+                }
+                else{
+                    payAfterBonus=pay+bonus;
+                }
+            }
+        }
+        document.write("Your Pay: $"+pay+"<br>");
+        document.write("Your Bonus: $"+bonus+"<br>");
+        document.write("Your Pay after bonus: $"+payAfterBonus);
+    </script>
+</head>
+<body>
+    <div align="right">
+        <a href="../index.htm"><button onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </div>
+</body>
+</html>

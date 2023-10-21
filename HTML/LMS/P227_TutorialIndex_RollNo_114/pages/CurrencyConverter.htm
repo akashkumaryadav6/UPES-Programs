@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/currency.css">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+    <div align="right">
+        <a href="../index.htm"><button class="btn" onmouseover="this.style.color='red'">GO BACK TO INDEX</button></a>
+    </div>
+    <div>
+        <form>
+            <fieldset class="card">
+                <legend>Currency Converter</legend>
+                <table>
+                    <br>
+                    <div>
+                        <tr>
+                            <td class="tright"><label for="currency">Enter Currency Value:</label></td>
+                            <td><input type="number" id="usercurrency" name="currency" placeholder="Currency"></td>
+                        </tr>
+                        <tr>
+                            <td class="tright"><label for="from">Convert From:</label></td>
+                            <td><select name="from" id="userfrom">
+                                <option value=1>American Dollar</option>
+                                <option value=2>Rupee</option>
+                                <option value=3>Euro</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td class="tright"><label for="to">Convert To:</label></td>
+                            <td><select name="to" id="userto">
+                                <option value="1">American Dollar</option>
+                                <option value="2">Rupee</option>
+                                <option value="3">Euro</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input class="btn" type="submit" value="Convert" onclick=check()></td>
+                        </tr>
+                        <tr>
+                            <td class="tright">The Converted Currency is:</td>
+                            <td><p class="text" id="currencyconverted" ></p></td>
+                        </tr>
+                    </div>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        function check(){
+            var curr=document.getElementById("usercurrency").value;
+            var choice=document.getElementById("userfrom").value;
+            var choice2=document.getElementById("userto").value;
+            if (choice==1 && choice2==2){
+                usd_to_rs();
+            }
+            else if (choice==1 && choice2==3){
+                usd_to_euro();
+            }
+            else if (choice==2 && choice2==3){
+                rs_to_euro();
+            }
+            else if (choice==2 && choice2==1){
+                rs_to_usd();
+            }
+            else if (choice==3 && choice2==1){
+                euro_to_usd();
+            }
+            else if (choice==3 && choice2==2){
+                euro_to_rs();
+            }
+            else if (choice==1 && choice2==1){
+                document.getElementById("currencyconverted").innerHTML="$"+curr;
+                alert("The chosen currency is same as converting from!");
+            }
+            else if (choice==2 || choice2==2){
+                document.getElementById("currencyconverted").innerHTML="₹"+curr;
+                alert("The chosen currency is same as converting from!");
+            }
+            else if (choice==3 || choice2==3){
+                document.getElementById("currencyconverted").innerHTML="€"+curr;
+                alert("The chosen currency is same as converting from!");
+            }
+        }
+        function usd_to_rs(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="₹"+curr*83.06;
+            alert("The converted currency is: ₹"+curr*83.06);
+        }
+        function euro_to_rs(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="₹"+curr*89.16;
+            alert("The converted currency is: ₹"+curr*89.16);
+        }
+        function rs_to_usd(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="$"+curr*0.012;
+            alert("The converted currency is: $"+curr*0.012);
+        }
+        function rs_to_euro(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="€"+curr*0.011;
+            alert("The converted currency is: €"+curr*0.011);
+        }
+        function usd_to_euro(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="€"+curr*0.93;
+            alert("The converted currency is: €"+curr*0.93);
+        }
+        function euro_to_usd(){
+            var curr=document.getElementById("usercurrency").value;
+            document.getElementById("currencyconverted").innerHTML="$"+curr*1.07;
+            alert("The converted currency is: $"+curr*1.07);
+        }
+    </script>
+</body>
+</html>
