@@ -20,25 +20,25 @@ int isEmpty()
         return 0;
 }
 
-int isFull()
-{
-    if (top != NULL)
-        return 1;
-    else
-        return 0;
-}
-
 int peek()
 {
-    return top->data;
+    if (top == NULL)
+    {
+        printf("\nStack Underflow!");
+    }
+    else
+    {
+        printf("\nTop Element: %d", top->data);
+    }
+    printf("\n----------------------");
 }
 
-int getStackSize(struct node *head)
+void getStackSize(struct node *head)
 {
     int length = 0;
     if (head == NULL)
     {
-        printf("Error : Invalid stack pointer !!!\n");
+        printf("\nStack Underflow!");
     }
     else
     {
@@ -48,7 +48,13 @@ int getStackSize(struct node *head)
             length++;
         }
     }
-    return length;
+    if (length < 2){
+        printf("\n%d Elements", length);
+    }
+    else{
+        printf("\n%d Elements", length);
+    }
+    printf("\n----------------------");
 }
 
 void push(int num)
@@ -66,7 +72,8 @@ void push(int num)
         temp->next = top;
         top = temp;
     }
-    printf("Pushed Element: %d\n", temp->data);
+    printf("\nPushed Element: %d", temp->data);
+    printf("\n----------------------");
 }
 
 void pop()
@@ -74,64 +81,99 @@ void pop()
     struct node *temp;
     if (isEmpty(top))
     {
-        printf("\nStack is Empty\n");
+        printf("\nStack Underflow!");
         return;
     }
     else
     {
         temp = top;
         top = top->next;
-        printf("Removed  Element : %d\n", temp->data);
+        printf("\nPopped  Element : %d", temp->data);
         free(temp);
     }
+    printf("\n----------------------");
 }
 
 void display(struct node *nodePtr)
 {
-    while (nodePtr != NULL)
-    {
-        printf("%d", nodePtr->data);
-        nodePtr = nodePtr->next;
-        if (nodePtr != NULL)
-            printf(" ");
+    if (top == NULL){
+        printf("\nStack Underflow!");
     }
-    printf("\n");
+    else{
+        while (nodePtr != NULL)
+        {
+            printf("\n");
+            printf("%d", nodePtr->data);
+            nodePtr = nodePtr->next;
+            if (nodePtr != NULL)
+                printf(" ");
+        }
+    }
+    printf("\n----------------------");
 }
 
-void main()
+void count(struct node *nodePtr)
+{
+    int count = 0;
+    if (top == NULL){
+        printf("\n0 Element");
+    }
+    else{
+        while (nodePtr != NULL){
+            count++;
+            nodePtr = nodePtr->next;
+            if (count == 1){
+                printf("\n%d Element", count);
+            }
+            else{
+                printf("\n%d Elements", count);
+            }
+        }
+    }
+    printf("\n----------------------");
+}
+
+int main()
 {
     initialize();
     int choice, ele, n;
 label:
-    printf("\nCreate Stack using Linked List\n1. Push\n2. Pop\n3. Peek\n4. Display\n5. Exit\nEnter your choice? ");
+    printf("\n\nCreate Stack using Linked List");
+    printf("\n1. Push\n2. Pop\n3. Peek\n4. Display\n5. Count\n6. Exit");
+    printf("\nEnter your choice? ");
     scanf("%d", &choice);
 
     switch (choice)
     {
     case 1:
-        printf("How many elements do you want to push? ");
-        scanf("%d", &n);
-        for (int i = 0; i < n; i++)
-        {
-            printf("Enter the %d element: ", i + 1);
-            scanf("%d", &ele);
-            push(ele);
-        }
+        printf("\n***PUSH AN ELEMENT***");
+        printf("\nEnter the element: ");
+        scanf("%d", &ele);
+        push(ele);
         break;
 
     case 2:
+        printf("\n***POP AN ELEMENT***");
         pop();
         break;
 
     case 3:
+        printf("\n***PEEK***");
         peek();
         break;
 
     case 4:
+        printf("\n***DISPLAY***");
         display(top);
         break;
 
     case 5:
+        printf("\n***COUNT***");
+        count(top);
+        break;
+
+    case 6:
+        printf("\n***EXIT***");
         exit(0);
         break;
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hangman Game</title>
+    <style>
+        body {
+            background-image: url('bgimage.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .word {
+            font-size: 36px;
+        }
+        .hint {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .letters {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #hangman {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .attempts {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div class="word" id="wordDisplay"></div>
+        <div class="hint" id="hintDisplay"></div>
+        <div class="letters" id="lettersDisplay"></div>
+        <div id="hangman"></div>
+        <div class="attempts" id="attemptsDisplay"></div>
+        <div class="message" id="messageDisplay"></div>
+        <input type="text" id="guessInput" placeholder="Enter your guess">
+        <button onclick="guessLetter()">Guess</button>
+    </div>
+    <script>
+        // List of words with hints
+        const wordData = [
+            { word: "javascript", hint: "A popular programming language for the web." },
+            { word: "programming", hint: "The act of writing code to create software." },
+            { word: "hangman", hint: "A word guessing game." },
+            { word: "computer", hint: "A device that processes data." },
+            { word: "developer", hint: "Someone who writes software." }
+        ];
+
+        // Variables
+        let selectedWord = "";
+        let wordHint = "";
+        let wordToDisplay = [];
+        let wrongGuesses = [];
+        const maxAttempts = 6;
+
+        // Select a random word and its hint
+        function selectRandomWord() {
+            const randomIndex = Math.floor(Math.random() * wordData.length);
+            selectedWord = wordData[randomIndex].word;
+            wordHint = wordData[randomIndex].hint;
+        }
+
+        // Initialize the game
+        function initialize() {
+            selectRandomWord();
+            wordToDisplay = new Array(selectedWord.length).fill("_");
+            wrongGuesses = [];
+            updateDisplay();
+        }
+
+        // Update the word and letters display
+        function updateDisplay() {
+            document.getElementById("wordDisplay").textContent = wordToDisplay.join(" ");
+            document.getElementById("hintDisplay").textContent = "Hint: " + wordHint;
+            document.getElementById("lettersDisplay").textContent = "Wrong guesses: " + wrongGuesses.join(", ");
+            document.getElementById("attemptsDisplay").textContent = "Attempts left: " + (maxAttempts - wrongGuesses.length);
+
+            if (wordToDisplay.join("") === selectedWord) {
+                document.getElementById("messageDisplay").textContent = "You win! The word was '" + selectedWord + "'.";
+                setTimeout(initialize, 2000); // Reset the game after 2 seconds
+            } else if (wrongGuesses.length >= maxAttempts) {
+                document.getElementById("messageDisplay").textContent = "Game over! The word was '" + selectedWord + "'.";
+                setTimeout(initialize, 2000); // Reset the game after 2 seconds
+            }
+        }
+
+        // Handle a guessed letter
+        function guessLetter() {
+            const guessInput = document.getElementById("guessInput");
+            const letter = guessInput.value.toLowerCase();
+
+            if (!/^[a-zA-Z]$/.test(letter)) {
+                alert("Please enter a valid letter.");
+                return;
+            }
+
+            if (selectedWord.includes(letter)) {
+                for (let i = 0; i < selectedWord.length; i++) {
+                    if (selectedWord[i] === letter) {
+                        wordToDisplay[i] = letter;
+                    }
+                }
+            } else {
+                wrongGuesses.push(letter);
+            }
+
+            guessInput.value = ""; // Clear the input field
+            updateDisplay();
+        }
+
+        // Initialize the game when the page loads
+        initialize();
+    </script>
+</body>
+</html>
