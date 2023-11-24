@@ -149,7 +149,7 @@ label:
     }
     else
     {
-      for (int i = 1; i < pos - 1; i++)
+      for (int i = 1; i < pos; i++)
       {
         temp = temp->next;
       }
