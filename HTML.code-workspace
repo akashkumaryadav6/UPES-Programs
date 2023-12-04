@@ -4,7 +4,10 @@
 			"path": "HTML"
 		},
 		{
-			"path": "..\\..\\..\\..\\xampp\\htdocs\\phpScripts"
+			"path": "C:\\xampp\\htdocs\\LMS"
+		},
+		{
+			"path": "C:\\xampp\\htdocs\\phpScripts"
 		}
 	],
 	"settings": {}
